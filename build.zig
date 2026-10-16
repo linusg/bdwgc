@@ -647,7 +647,7 @@ fn addTestExt(b: *std.Build, gc: *std.Build.Step.Compile, test_step: *std.Build.
     const test_exe = b.addExecutable(.{
         .name = testname,
         .root_module = b.createModule(.{
-            .optimize = gc.root_module.optimize.?,
+            .optimize = gc.root_module.optimize,
             .target = gc.root_module.resolved_target.?,
             .link_libc = true,
         }),
